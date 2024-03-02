@@ -3,9 +3,21 @@ import 'package:crezam_task/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:palette_generator/palette_generator.dart';
 
-class JobPostWidget extends StatelessWidget {
+class JobPostWidget extends StatefulWidget {
   const JobPostWidget({super.key});
+
+  @override
+  State<JobPostWidget> createState() => _JobPostWidgetState();
+}
+
+class _JobPostWidgetState extends State<JobPostWidget> {
+  Future<Color> getImagePalette(ImageProvider imageProvider) async {
+    final PaletteGenerator paletteGenerator =
+        await PaletteGenerator.fromImageProvider(imageProvider);
+    return paletteGenerator.dominantColor!.color;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -144,9 +156,23 @@ class JobPostWidget extends StatelessWidget {
         Positioned(
           right: 0,
           top: 0,
-          child: CircleAvatar(
-            backgroundColor: inactiveColor.withOpacity(0.7),
-            child: Icon(Icons.arrow_outward_outlined,),
+          child: FutureBuilder<Color>(
+            future:
+                getImagePalette(AssetImage('assets/images/cover_image.png')),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                Color dominantColor = snapshot.data!;
+                return CircleAvatar(
+                  backgroundColor: dominantColor,
+                  child: Icon(
+                    Icons.arrow_outward_outlined,
+                  ),
+                );
+              } else {
+                // You can return a placeholder or loading widget here while waiting for the palette
+                return CircularProgressIndicator();
+              }
+            },
           ),
         ),
       ],

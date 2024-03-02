@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: "UrbanistRegular",
         primaryColor: primaryColor,
+        dividerTheme:
+            const DividerThemeData(color: Color(0xFF454545), thickness: 0.7),
         scaffoldBackgroundColor: Colors.white,
       ),
       home: const NavPage(),

@@ -1,5 +1,7 @@
 import 'package:crezam_task/utils/colors.dart';
 import 'package:crezam_task/views/home/home.dart';
+import 'package:crezam_task/views/messaging/messaging.dart';
+import 'package:crezam_task/views/profile/profile.dart';
 import 'package:flutter/material.dart';
 
 class NavPage extends StatefulWidget {
@@ -29,8 +31,11 @@ class _NavPageState extends State<NavPage> {
             currentIndex = value;
           });
         },
-        children: [
-          const Home(),
+        children: const [
+          Home(),
+          Scaffold(),
+          Messaging(),
+          Profile(),
         ],
       ),
       bottomNavigationBar: Container(
@@ -44,8 +49,8 @@ class _NavPageState extends State<NavPage> {
                     currentIndex = 0;
                   });
                   controller.animateToPage(currentIndex,
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeIn);
+                      duration: const Duration(milliseconds: 800),
+                      curve: Curves.linearToEaseOut);
                 },
                 icon: Icon(Icons.home,
                     color: currentIndex == 0 ? primaryColor : inactiveColor)),
@@ -55,8 +60,8 @@ class _NavPageState extends State<NavPage> {
                     currentIndex = 1;
                   });
                   controller.animateToPage(currentIndex,
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeIn);
+                      duration: const Duration(milliseconds: 800),
+                      curve: Curves.linearToEaseOut);
                 },
                 icon: Icon(Icons.workspace_premium,
                     color: currentIndex == 1 ? primaryColor : inactiveColor)),
@@ -66,8 +71,8 @@ class _NavPageState extends State<NavPage> {
                     currentIndex = 2;
                   });
                   controller.animateToPage(currentIndex,
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeIn);
+                      duration: const Duration(milliseconds: 800),
+                      curve: Curves.linearToEaseOut);
                 },
                 icon: Icon(Icons.message,
                     color: currentIndex == 2 ? primaryColor : inactiveColor)),
@@ -77,8 +82,8 @@ class _NavPageState extends State<NavPage> {
                     currentIndex = 3;
                   });
                   controller.animateToPage(currentIndex,
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeIn);
+                      duration: const Duration(milliseconds: 800),
+                      curve: Curves.linearToEaseOut);
                 },
                 icon: Icon(Icons.person,
                     color: currentIndex == 3 ? primaryColor : inactiveColor)),
