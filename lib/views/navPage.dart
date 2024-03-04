@@ -1,5 +1,6 @@
 import 'package:crezam_task/utils/colors.dart';
 import 'package:crezam_task/views/home/home.dart';
+import 'package:crezam_task/views/jobs/jobs.dart';
 import 'package:crezam_task/views/messaging/messaging.dart';
 import 'package:crezam_task/views/profile/profile.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ class _NavPageState extends State<NavPage> {
         },
         children: const [
           Home(),
-          Scaffold(),
+          Jobs(),
           Messaging(),
           Profile(),
         ],

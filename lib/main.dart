@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Crezam Task',
       theme: ThemeData(
+        sliderTheme: SliderThemeData(
+          showValueIndicator: ShowValueIndicator.always,
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
         useMaterial3: true,
         fontFamily: "UrbanistRegular",

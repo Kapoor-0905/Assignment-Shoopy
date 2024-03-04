@@ -23,6 +23,12 @@ InputDecoration searchBarInput = InputDecoration(
     hintText: 'Search',
     hintStyle: normalText(fontSize: 14),
     border: InputBorder.none);
+
+InputDecoration textFieldInput({required String hintText}) => InputDecoration(
+      hintText: hintText,
+      border: InputBorder.none,
+      hintStyle: normalText(fontSize: 14),
+    );
 BoxDecoration searchBar = BoxDecoration(
     color: shadeColor.withOpacity(0.3),
     borderRadius: BorderRadius.circular(20));

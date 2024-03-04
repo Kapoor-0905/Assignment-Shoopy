@@ -2,6 +2,7 @@ import 'package:crezam_task/utils/colors.dart';
 import 'package:crezam_task/utils/styles.dart';
 import 'package:crezam_task/views/home/components/jobPostWidget.dart';
 import 'package:crezam_task/views/home/components/skillBasedJobWidget.dart';
+import 'package:crezam_task/views/profile/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -33,9 +34,7 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+               
                     Text.rich(
                       TextSpan(
                         text: 'Let\'s find a job\n',
@@ -45,16 +44,7 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    const CircleAvatar(
-                      radius: 30,
-                      child: Icon(
-                        Icons.person_4_sharp,
-                        color: primaryColor,
-                        size: 30,
-                      ),
-                    ),
-                  ],
-                ),
+                    
                 const SizedBox(height: 20),
                 Row(
                   children: [
